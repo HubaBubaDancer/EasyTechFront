@@ -1,0 +1,176 @@
+body {
+    margin: 0;
+    font-family: 'goodtimesrg';
+    background-color: #000;
+    color: #fff;
+    position: absolute;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+
+}
+
+.sidebar {
+    background-color: #a2ff00;
+    width: 60px;
+    height: 220%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.easy {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 35px;
+    font-weight: 900;
+    margin-top: 40%;
+    color: #000;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.navbar  {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1%;
+    
+}
+.navbar :first-child  {
+    margin-right: 45%;
+    margin-top: -0.5% ;
+    font-weight: bold;
+
+}
+
+.nav-item #logo{
+    font-size: 80px;
+}
+.nav-item {
+    margin-left: 30%;
+    font-size: 1.85em;
+    margin: 1.5%;
+    margin-top:1.4% ;
+    
+}
+
+.content {
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: auto;
+    margin-right: 4%;
+
+    
+}
+
+.content h1 {
+    font-size: 465%;
+    margin: 0%;
+}
+
+.content button {
+    margin-top: 1%;
+    padding: 0.5% 2.5%;
+    background-color: #a2ff00;
+    border: none;
+    font-size: 36px;
+    cursor: pointer;
+    margin-right: 1%;
+}
+
+
+
+@font-face {
+    font-family: "goodtimesrg"; 
+    src: url("../fonts/good times rg.otf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+  } 
+
+  #overlay {
+    position: relative;
+    top: -1045px;
+    left: -25px;
+    width: 0%;
+    height: 0%;
+
+    z-index: 2;
+    pointer-events: none; /* Чтобы клики проходили сквозь canvas */
+  }
+
+
+  #scrollToBottom {
+    display: block; /* Убеждаемся, что картинка отображается как блочный элемент */
+    margin: 30% 41.5%;; /* Центрируем по горизонтали и добавляем отступ сверху и снизу */
+    width: 15%; /* Задаем ширину картинки, если требуется */
+    height: 15%; /* Задаем высоту картинки, если требуется */
+    cursor: pointer; /* Делаем курсор указателем при наведении */
+    transition: transform 0.3s ease; /* Добавляем плавный эффект при наведении */
+    rotate: 180deg;
+    margin-top: -64%;
+}
+
+#scrollToBottom:hover {
+    transform: scale(1.1); /* Немного увеличиваем картинку при наведении */
+}
+
+
+.info_about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Выравниваем текст по центру */
+    font-size: 150%; /* Устанавливаем размер шрифта 150% от базового */
+    height: 10vh; /* Высота блока равна высоте видимой области окна браузера */
+    margin-bottom: 20%; /* Отступ снизу */
+    margin-top: 35%;
+}
+
+
+#first_par {
+    margin-bottom: 20px; /* Отступ снизу для заголовка */
+    color: #a2ff00;
+}
+
+#second_par {
+    max-width: 50%; /* Максимальная ширина текста для удобного чтения */
+    line-height: 1.6; /* Межстрочный интервал для лучшей читаемости */
+}
+
+
+#scrollToTop {
+    position: block;
+    bottom: 20px; /* Отступ от нижнего края страницы */
+    right: 20px; /* Отступ от правого края страницы */
+    cursor: pointer;
+    transition: opacity 0.3s;
+    z-index: 1000; /* Устанавливаем высокий z-index для кнопки */
+    width: 15%;
+}
+
+#scrollToTop:hover {
+    transform: scale(1.1); /* Немного увеличиваем картинку при наведении */
+}
+
+.link{
+    text-decoration: none;
+    color:#fff;
+    transition: color 0.3s ease; /* Плавная анимация смены цвета в течение 0.3 секунды */
+}
+
+.link:hover {
+    color: #a2ff00; /* Зелёный цвет при наведении */
+}

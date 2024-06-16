@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Assistant</title>
+    <link rel="stylesheet" href="scr/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="easy">EASY</div>
+        </div>
+        <div class="main-content">
+            <div class="navbar">
+               <div class="nav-item"><span id="logo">TECH</span></div> 
+                <div class="nav-item"><a class="link" href="TechAI.html">TechAI</a></div>
+                <div class="nav-item"><a class="link" href="recomendations.html">Recomendations</a></div>
+                <div class="nav-item"><a class="link" href="Account.html">Account</a></div>
+            </div>
+            <div class="content">
+                <h1>Your Ultimate<br>
+                     Tech<br>
+                      Assistant</h1>
+                <a href="TechAI.html"><button >START</button></a>
+            </div>
+
+        </div>
+    </div>
+    <div id="overlay"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<script>
+  // Создаем сцену
+  const scene = new THREE.Scene();
+
+  // Создаем камеру
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.01, 1000);
+  camera.position.z = 5;
+
+  // Создаем рендер
+  const renderer = new THREE.WebGLRenderer({ alpha: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.getElementById('overlay').appendChild(renderer.domElement);
+
+  // Добавляем свет
+  const light = new THREE.AmbientLight(0xffffff); // Белый цвет для равномерного освещения
+  scene.add(light);
+  
+  // Загрузка 3D-модели с использованием GLTFLoader
+  const loader = new THREE.GLTFLoader();
+  loader.load('cube1.glb', function(gltf) {
+    // Первый куб
+    const model1 = gltf.scene.clone();
+    model1.traverse(function(node) {
+      if (node.isMesh) {
+        node.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Белый цвет
+      }
+    });
+    model1.position.set(6.5, -2.5, 0); // Позиционируем первый куб
+    scene.add(model1);
+    model1.scale.set(0.5, 0.5, 0.5); // Уменьшение размера первого куба в 2 раза по всем осям
+
+    // Второй куб
+    const model2 = gltf.scene.clone();
+    model2.traverse(function(node) {
+      if (node.isMesh) {
+        node.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Белый цвет
+      }
+    });
+    model2.position.set(6.4, -1, 0); // Позиционируем второй куб
+    scene.add(model2);
+    model2.scale.set(0.4, 0.4, 0.4); // Уменьшение размера второго куба в 2 раза по всем осям
+
+    // Третий куб
+    const model3 = gltf.scene.clone();
+    model3.traverse(function(node) {
+      if (node.isMesh) {
+        node.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Белый цвет
+      }
+    });
+    model3.position.set(6, 0, 0); // Позиционируем третий куб
+    scene.add(model3);
+    model3.scale.set(0.2, 0.2, 0.2); // Уменьшение размера третьего куба в 2 раза по всем осям
+    
+    // Третий куб
+    const model4 = gltf.scene.clone();
+    model4.traverse(function(node) {
+      if (node.isMesh) {
+        node.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Белый цвет
+      }
+    });
+ 
+    model4.position.set(4, -3.5, 0); // Позиционируем модель
+    scene.add(model4);
+    model4.scale.set(0.5, 0.5, 0.5); // Уменьшение размера модели в 2 раза по всем осям
+    
+
+
+
+    
+    // Оригинальный куб (уже добавлен в сцену из loader.load)
+
+    // Функция анимации
+    function animate() {
+      requestAnimationFrame(animate);
+
+      // Вращаем кубы
+      model1.rotation.y += 0.002;
+      model2.rotation.y -= 0.002;
+      model3.rotation.y += 0.02;
+      model4.rotation.y += 0.02;
+      model1.rotation.x += 0.001;
+      model2.rotation.x -= 0.0001;;
+      model3.rotation.x += 0.001;
+      model4.rotation.x += 0.001;
+
+      
+
+      // Рендерим сцену с камерой
+      renderer.render(scene, camera);
+    }
+
+    // Запускаем анимацию
+    animate();
+  }, undefined, function(error) {
+    console.error(error);
+  });
+
+  // Обработка изменения размера окна
+  window.addEventListener('resize', function() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+</script>
+<img id="scrollToBottom" src="img/str.png" alt="Прокрутить вниз">
+<script>
+    // JavaScript для прокрутки страницы вниз
+    var scrollToBottomImg = document.getElementById("scrollToBottom");
+
+    scrollToBottomImg.addEventListener("click", function() {
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth"
+        });
+    });
+</script>
+
+
+<div class="info_about">
+    
+    <h1 id="first_par">Our Website's Purpose and Advantages:</h1>
+    <p id="second_par">Discover the ultimate in personalized computing with our innovative AI-powered platform. From custom PC builds crafted to your exact specifications to simplified component selection, we offer unparalleled ease and accessibility. Whether you're a tech enthusiast or a beginner, our site serves as both a practical tool and an educational resource, empowering you to build the perfect PC with confidence and clarity.</p>
+    <img id="scrollToTop" src="img/str.png" alt="Прокрутить вверх">
+</div>
+<script>
+    var scrollToTopBtn = document.getElementById("scrollToTop");
+
+    scrollToTopBtn.addEventListener("click", function() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+</script>
+</body>
+</html>

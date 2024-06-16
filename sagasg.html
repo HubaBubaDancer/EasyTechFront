@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expandable Sections</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        .container {
+            width: 50%;
+            margin: 0 auto;
+        }
+        .section {
+            border-bottom: 1px solid #444;
+            padding: 10px 0;
+            position: relative;
+        }
+        .title {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .content {
+            display: none;
+            padding: 10px 0;
+        }
+        .arrow {
+            transition: transform 0.3s;
+        }
+        .arrow.down {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <div class="title">
+                Can beginners build a PC? <span class="arrow">▶</span>
+            </div>
+            <div class="content">
+                Yes, beginners can build a PC with proper guidance and resources.
+            </div>
+        </div>
+        <div class="section">
+            <div class="title">
+                What are the 3 most important components of any computer system? <span class="arrow">▶</span>
+            </div>
+            <div class="content">
+                The CPU, GPU, and RAM are considered the most important components of a computer system.
+            </div>
+        </div>
+        <div class="section">
+            <div class="title">
+                What is better: to assemble a computer yourself or buy a ready-made one in a store? <span class="arrow">▶</span>
+            </div>
+            <div class="content">
+                Assembling a computer yourself can be cheaper and more customizable, while buying a ready-made one is more convenient.
+            </div>
+        </div>
+        <div class="section">
+            <div class="title">
+                Top 10 mistakes when choosing PC components <span class="arrow">▶</span>
+            </div>
+            <div class="content">
+                Common mistakes include choosing incompatible parts, underestimating power supply needs, and not considering future upgrades.
+            </div>
+        </div>
+        <div class="section">
+            <div class="title">
+                The basic components of any desktop computer <span class="arrow">▶</span>
+            </div>
+            <div class="content">
+                Basic components include the motherboard, CPU, RAM, storage, power supply, and case.
+            </div>
+        </div>
+        <div class="section">
+            <div class="title">
+                How To Build A PC – Step by Step (Full Build Guide) <span class="arrow">▶</span>
+            </div>
+            <div class="content">
+                Building a PC involves selecting parts, assembling them, installing an operating system, and configuring settings.
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.title').forEach(title => {
+            title.addEventListener('click', () => {
+                const content = title.nextElementSibling;
+                const arrow = title.querySelector('.arrow');
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                    arrow.classList.remove('down');
+                } else {
+                    document.querySelectorAll('.content').forEach(c => c.style.display = 'none');
+                    document.querySelectorAll('.arrow').forEach(a => a.classList.remove('down'));
+                    content.style.display = 'block';
+                    arrow.classList.add('down');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

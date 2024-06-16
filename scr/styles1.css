@@ -1,0 +1,281 @@
+body {
+    margin: 0;
+    font-family: 'goodtimesrg';
+    background-color: #000;
+    color: #fff;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+   
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+
+}
+
+.sidebar {
+    background-color: #a2ff00;
+    width: 60px;
+    height: 220%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.easy {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 35px;
+    font-weight: 900;
+    margin-top: 40%;
+    color: #000;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.navbar  {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1%;
+    
+}
+.navbar :first-child  {
+    margin-right: 45%;
+    margin-top: -0.5% ;
+    font-weight: bold;
+
+}
+
+.nav-item #logo{
+    font-size: 80px;
+}
+.nav-item {
+    margin-left: 30%;
+    font-size: 1.85em;
+    margin: 1.5%;
+    margin-top:1.4% ;
+    
+}
+.link{
+    text-decoration: none;
+    color:#fff;
+    transition: color 0.3s ease; /* Плавная анимация смены цвета в течение 0.3 секунды */
+}
+
+.link:hover {
+    color: #a2ff00; /* Зелёный цвет при наведении */
+}
+@font-face {
+    font-family: "goodtimesrg"; 
+    src: url("../fonts/good times rg.otf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+  } 
+
+
+/* Стили для новой секции */
+.scalable-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 20px;
+    width: calc(100% - 40px); /* Учитывая отступы */
+}
+
+.scalable-element {
+    flex: 1;
+    margin: 10px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.info-about {
+    background-color: #fff;
+    color: #000;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: calc(100% - 40px); /* Учитывая отступы */
+    margin: 20px;
+}
+
+/* Подстраивание высоты элементов под самый высокий */
+.scalable-container .scalable-element {
+    flex: 1 1 auto;
+    height: 100%;
+}
+
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: 30%;
+    margin-bottom: auto;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 25px 35px;
+    width: 700px;
+    max-width: 100%;
+    max-height: 50%;
+
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.search-container button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.search-container button img {
+    width: 30px;
+    height: 30px;
+}
+.products {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    overflow: hidden;
+    margin-bottom: auto;
+}
+
+.box {
+    border-radius: 10px;
+    overflow: hidden;
+    width: 400px; /* Исходная ширина */
+    height: 500px; /* Исходная высота */
+    transition: width 0.5s ease;
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    position: relative;
+    border: 2px solid #ccc; /* Граница 2px, цвет #ccc */
+    box-sizing: border-box; /* Учитываем границу в расчете размеров */
+    padding: 20px; /* Увеличим внутренние отступы */
+    margin-right: 20px; /* Расстояние между блоками */
+}
+
+.box:hover {
+    width: 800px; /* Увеличиваем ширину при наведении */
+    height: 500px; /* Меняем высоту при наведении */
+}
+/* Убираем подчеркивание и обводку у ссылок внутри info-box */
+.info-box a {
+    text-decoration: none;
+    outline: none;
+}
+
+
+/* Чтобы также убрать стили для всех состояний ссылок */
+.info-box a:link,
+.info-box a:visited,
+.info-box a:hover,
+.info-box a:active {
+    text-decoration: none;
+    outline: none;
+    color: inherit; /* Наследуем цвет текста */
+}
+
+.info-box {
+    padding: 20px;
+    text-align: center;
+    flex: 1; /* Занимает всю доступную ширину */
+    box-sizing: border-box;
+}
+
+.info-box img {
+    max-width: 150%; /* Изображение будет респонсивным внутри своей контейнера */
+    display: block; /* Убираем пробелы вокруг изображения */
+    margin: 0 auto 10px; /* Центрируем изображение и добавляем отступ снизу */
+    height: 20em;
+    width: 100%;
+    border-radius: 5%;
+}
+
+.info-box #title {
+    font-weight: bold;
+    margin: 10px 0;
+    color: #fff; /* Цвет текста белый */
+    font-size: 1.5rem; /* Размер шрифта */
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Изменение ширины */
+    margin: 10px 0;
+    font-size: 1.5rem; /* Размер шрифта */
+}
+
+.price span {
+    font-weight: bold;
+    color: #fff; /* Цвет текста белый */
+}
+
+.message {
+    padding: 20px;
+    text-align: left;
+    border-top: 1px solid #ccc;
+    flex: 1; /* занимает оставшееся пространство */
+    display: none;
+    box-sizing: border-box;
+    overflow-y: auto; /* Добавлено для прокрутки при необходимости */
+}
+
+.box:hover .message {
+    display: block;
+}
+
+.characteristics {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0; /* Добавлено для отступов между характеристиками */
+    color: #fff; /* Цвет текста белый */
+    overflow-y: auto; /* Добавлено для прокрутки при необходимости */
+    max-height: 200px; /* Максимальная высота характеристик */
+}
+
+.characteristics li {
+    margin: 5px 0;
+}
+
+.qua {
+    font-size: small;
+    color: #fff; /* Цвет текста белый */
+}
+#lupa_search{
+    transform: scale(1.5);
+    margin-left: 300%;
+    
+}
+
+

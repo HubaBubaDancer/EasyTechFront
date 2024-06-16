@@ -1,0 +1,22 @@
+[ 
+  [ 
+    { 
+      "name": "Sapphire Pulse Radeon RX 7600  ", 
+      "description": "Sapphire PULSE Radeon™ RX 7600 XT 16GB GDDR6 128Bit 2810/18000Mhz, 2xHDMI, 2xDP, Dual Fan, SP: 2048, AMD RDNA 3, 5nm GPU, PCIe4.0, 2.2 Slot, Composite Heatpipe, Two-Ball Bearing, Dual-X Cooling, Fuse Protection, Intelligent Fan Control, Metal Backplate, 2x 8-pin, Lite Retail", 
+      "price": "8489", 
+      "image": "https://www.cactus.md/i.ashx?i=/i/products/28/143870.jpg&w=1580" 
+    }, 
+    { 
+      "name": "RTX 3060 Ti", 
+      "description": "NVIDIA GeForce RTX 3060 Ti; Memory bus, 256-bit; Memory type, GDDR6; Memory capacity, 8192; PSP, GB/s, 448.", 
+      "price": "8 090 ", 
+      "image": "https://cdn.pandashop.md/i/?i=/i/products/176/1760133.jpg&w=1220&h=1220" 
+    }, 
+    { 
+      "name": "NVIDIA GeForce RTX 4060 Ti", 
+      "description": "MSI GeForce RTX™ 4060 Ti VENTUS 2X BLACK 8G OC / 8GB GDDR6 128Bit 2565/18000Mhz, Ada Lovelace/ DLSS3, PCIeX16 4.0, 1xHDMI, 3xDP, Dual-Fan Thermal Design: TORX Fan 4.0/Zero Frozr/DrMos/Fuse/Effective Thermal Padding, Custom PCB, Reinforcing Backplate, 1x 8-pin, 160W, Retail", 
+      "price": "9449", 
+      "image": "https://b2b.accent.md/public/product/97/93097/thumbs/version_4/1.jpg" 
+    } 
+  ] 
+]

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Assistant</title>
+    <link rel="stylesheet" href="scr/styles1.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="easy">EASY</div>
+        </div>
+        <div class="main-content">
+            <div class="navbar">
+                <div class="nav-item"><span id="logo"><a href="index.html" class="link">TECH</a></span></div>
+                <div class="nav-item"><a class="link" href="TechAI.html">TechAI</a></div>
+                <div class="nav-item"><a class="link" href="recomendations.html">Recomendations</a></div>
+                <div class="nav-item"><a class="link" href="Account.html">Account</a></div>
+            </div>
+
+            <!-- Форма для ввода данных -->
+            <form id="dataForm" class="search-container">
+                <input type="text" id="dataInput" placeholder="Request easy teg...">
+                <button type="submit" id="loadDataButton"><img id="lupa_search" src="img/lupa.png"></button>
+                <img src="search-icon.png" alt="Search">
+            </form>
+
+            <div class="products" id="products"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urls = [
+                "https://www.pandashop.md/ru/product/r-geforce-rtx-3060ti-8gb-gddr6-vn3606tm82-00750099/",
+                "https://www.cactus.md/ru/catalogue/electronice/kompyuternaya-tehnika/komplektuyushie/videokarty/videokarta-sapphire-pulse-radeon-rx-7600-xt-16gb/",
+                "https://atehno.md/products/msi-geforce-rtx-4060-ti-ventus-2x-black-8g-oc-8gb-gddr6-128bit-256518000mhz-ada-lovelace-dlss3-pciex16-40-1xhdmi-3xdp-dualfan-thermal-design-torx-fan-40zero-frozrdrmosfuseeffective-th-9857901634930"
+            ];
+
+            async function fetchData(event) {
+                event.preventDefault(); // Prevent form submission
+
+                try {
+                    const response = await fetch('response.json'); // Ensure response.json exists in the root directory
+                    const data = await response.json();
+                    
+                    // Flatten the data array
+                    const flatData = data.flat();
+                    
+                    // Sort the data by price in ascending order
+                    flatData.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+
+                    const productsContainer = document.getElementById('products');
+                    productsContainer.innerHTML = ''; // Clear existing content
+
+                    flatData.forEach((item, index) => {
+                        const box = document.createElement('div');
+                        box.classList.add('box');
+                        box.id = `box${index + 1}`;
+
+                        box.innerHTML = `
+                            <a href="${urls[index]}" target="_blank" class="info-box">
+                                <img id="image${index + 1}" width="100px" src="${item.image}" alt="${item.name}">
+                                <p id="title${index + 1}">${item.name}</p>
+                                <div class="price">
+                                    <span>Price</span>
+                                    <span class="dollar" id="price${index + 1}">${item.price}</span>
+                                </div>
+                            </a>
+                            <div class="message" id="message${index + 1}">
+                                <p align="center" style="margin:10px; font-weight: bold;">Characteristics</p>
+                                <p id="description${index + 1}">${item.description}</p>
+                            </div>
+                        `;
+
+                        productsContainer.appendChild(box);
+                    });
+                } catch (error) {
+                    console.error('Error fetching data:', error);
+                }
+            }
+
+            document.getElementById('dataForm').addEventListener('submit', fetchData);
+        });
+    </script>
+</body>
+</html>
